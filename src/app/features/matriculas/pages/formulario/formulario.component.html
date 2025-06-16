@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h2>Nova Matrícula</h2>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Aluno</mat-label>
+      <mat-select formControlName="alunoId">
+        <mat-option *ngFor="let aluno of alunos" [value]="aluno.id">
+          {{ aluno.nome }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('alunoId')?.invalid">Selecione um aluno</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Cursos</mat-label>
+      <mat-select formControlName="cursoIds" multiple>
+        <mat-option *ngFor="let curso of cursos" [value]="curso.id">
+          {{ curso.nome }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('cursoIds')?.invalid">Selecione pelo menos um curso</mat-error>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Salvar
+      </button>
+      <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="form-container">
+  <h2>{{ isEdit ? 'Editar Curso' : 'Novo Curso' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+      <mat-error *ngIf="form.get('nome')?.invalid">Nome obrigatório (mín. 3 letras)</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput formControlName="descricao" rows="3"></textarea>
+      <mat-error *ngIf="form.get('descricao')?.invalid">Descrição obrigatória</mat-error>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        {{ isEdit ? 'Salvar' : 'Cadastrar' }}
+      </button>
+      <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

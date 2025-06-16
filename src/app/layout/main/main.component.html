@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Gerenciador de Cursos</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/cursos" routerLinkActive="active">Cursos</a>
+  <a mat-button routerLink="/alunos" routerLinkActive="active">Alunos</a>
+  <a mat-button routerLink="/matriculas" routerLinkActive="active">Matrículas</a>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

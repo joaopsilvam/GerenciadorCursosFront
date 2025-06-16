@@ -1,0 +1,18 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+
+  &.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+  }
+}
+
+.content {
+  padding: 24px;
+}

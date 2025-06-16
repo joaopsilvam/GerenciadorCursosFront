@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Matrículas</h2>
+
+  <div style="text-align: right; margin-bottom: 16px;">
+    <button mat-raised-button color="primary" [routerLink]="['/matriculas/nova']">
+      Nova Matrícula
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="matriculas" class="mat-elevation-z2" style="width: 100%;">
+
+    <ng-container matColumnDef="nomeAluno">
+      <th mat-header-cell *matHeaderCellDef> Aluno </th>
+      <td mat-cell *matCellDef="let m"> {{m.nomeAluno}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nomeCurso">
+      <th mat-header-cell *matHeaderCellDef> Curso </th>
+      <td mat-cell *matCellDef="let m"> {{m.nomeCurso}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let m">
+        <button mat-icon-button color="warn" (click)="remover(m.alunoId, m.cursoId)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
