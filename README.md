@@ -1,27 +1,57 @@
-# GerenciadorCursosFront
+# 🎓 Gerenciador de Cursos - Frontend (Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+Este é o frontend da aplicação para gerenciamento de cursos, alunos e matrículas. Desenvolvido com Angular 17 e Angular Material.
 
-## Development server
+## ✅ Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Node.js LTS](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
+- Git
 
-## Code scaffolding
+## 🚀 Como rodar localmente
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone o repositório**
 
-## Build
+```bash
+git clone https://github.com/joaopsilvam/GerenciadorCursosFront.git
+cd GerenciadorCursosFront
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Instale as dependências**
 
-## Running unit tests
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Configure a URL da API**
 
-## Running end-to-end tests
+No arquivo `src/environments/environment.ts`, ajuste a URL para o backend:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:7010/api'
+};
+```
 
-## Further help
+4. **Rode a aplicação**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng serve
+```
+
+Acesse em:  
+`http://localhost:4200`
+
+## 📂 Funcionalidades
+
+- ✅ Gerenciar cursos (CRUD)
+- ✅ Gerenciar alunos (CRUD)
+- ✅ Matricular alunos em cursos
+- ✅ Listar alunos por curso
+
+## 🛠 Tecnologias
+
+- Angular 17+
+- TypeScript
+- Angular Material
